@@ -8,9 +8,7 @@
 
 ## Install
 
-```sh
-npm install
-```
+"TBC"
 
 ## Author
 
