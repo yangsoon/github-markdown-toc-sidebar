@@ -15,6 +15,9 @@
         "js": [
             "js/content.js"
         ],
+        "css": [
+            "css/content.css"
+        ],
         "run_at": "document_end"
     }],
     "web_accessible_resources": ["fonts/*"],

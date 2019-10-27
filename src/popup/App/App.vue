@@ -1,7 +1,7 @@
 <template>
   <Card class="box-card">
     hello
-    <Button type="dashed">虚线按钮</Button>
+    <Button type="dashed">虚线按钮</Button> <br/>
     <Button :size="buttonSize" icon="ios-download-outline" type="primary" @click="test">Download</Button>
   </Card>
 </template>

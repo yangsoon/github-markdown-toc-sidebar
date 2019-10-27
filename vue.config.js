@@ -60,11 +60,7 @@ module.exports = {
     }
   },
   chainWebpack: config => {
-    // 处理字体文件名，去除hash值
-    const fontsRule = config.module.rule('fonts')
-
-    // 清除已有的所有 loader。
-    // 如果你不这样做，接下来的 loader 会附加在该规则现有的 loader 之后。
+    const fontsRule = config.module.rule('fonts');
     fontsRule.uses.clear()
     fontsRule.test(/\.(woff2?|eot|ttf|otf)(\?.*)?$/i)
       .use('url')

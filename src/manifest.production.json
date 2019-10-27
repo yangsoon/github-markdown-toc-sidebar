@@ -6,5 +6,19 @@
     "options_page": "options.html",
     "browser_action": {
         "default_popup": "popup.html"
-    }
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "content_scripts": [{
+        "matches": [
+            "*://*.github.com/*"
+        ],
+        "js": [
+            "js/content.js"
+        ],
+        "css": [
+            "css/content.css"
+        ],
+        "run_at": "document_end"
+    }],
+    "web_accessible_resources": ["fonts/*"]
 }
