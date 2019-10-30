@@ -1,6 +1,6 @@
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
-
+const ZipPlugin = require("zip-webpack-plugin");
 // Generate pages object
 const pagesObj = {};
 
@@ -42,6 +42,15 @@ if (process.env.NODE_ENV !== 'production') {
   )
 }
 
+if (process.env.NODE_ENV === 'production') {
+  plugins.push(
+    new ZipPlugin({
+      path: path.resolve("dist"),
+      filename: 'dist.zip',
+    })
+  )
+}
+
 module.exports = {
   pages: pagesObj,
   configureWebpack: {
@@ -68,6 +77,13 @@ module.exports = {
       .options({
         limit: 1000,
         name: 'fonts/[name].[ext]'
-      })
+      });
+      if (process.env.npm_config_report) {
+        // 在运行命令中添加 --report参数运行， 如：npm run build --report
+        config
+          .plugin('webpack-bundle-analyzer')
+          .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
+      }
   }
+
 };
