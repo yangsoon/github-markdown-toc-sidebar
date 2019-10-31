@@ -17,7 +17,8 @@
 
 ## DEMO
 
-![](./img/demo.png)
+![](./img/demo1.png)
+![](./img/demo2.png)
 
 ## TODO
 
