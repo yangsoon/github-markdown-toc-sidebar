@@ -78,7 +78,7 @@ function insertSideBar() {
     });
 }
 
-let markdown = document.getElementsByTagName("article")[0];
+let markdown = document.getElementsByTagName("article")[0] || document.getElementById("wiki-body");
 
 if (markdown) {
     (function insertViewIcons() {
