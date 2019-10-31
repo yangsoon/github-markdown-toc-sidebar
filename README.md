@@ -4,13 +4,16 @@
 
 > a chrome extension for github to show &#34;table of content&#34; of *.md file
 
-**注意这只是测试demo，还不能完美运行在chrome中**
-
 ### 🏠 [Homepage](https://github.com/yangsoon/github-markdown-toc-sidebar)
 
 ## Install
 
-"TBC"
+**just for test**
+**注意这只是测试demo，还不能完美运行在chrome中**
+
+1. download zip file from releases
+2. open Chrome, At the top right, click More More tools Extensions, drag zip in chrome
+
 
 ## DEMO
 
