@@ -1,22 +1,25 @@
 import Vue from "vue/dist/vue.esm.js";
 import 'view-design/dist/styles/iview.css';
 import SideBar from "./components/SideBar"
+import "./iconfont"
 
 import {
     Button,
     Drawer,
     Tree,
-    BackTop
+    Icon,
+    Tooltip,
+    ButtonGroup
 } from "view-design";
 
 Vue.component("Button", Button);
 Vue.component("Drawer", Drawer);
 Vue.component("Tree", Tree);
-Vue.component("BackTop", BackTop);
+Vue.component("Tooltip", Tooltip);
+Vue.component("Icon", Icon);
+Vue.component("ButtonGroup", ButtonGroup);
 Vue.component('side-bar', SideBar);
 
-// let githubHeader = document.getElementsByClassName("Header")[0];
-// githubHeader.style['padding-right'] = "300px";
 function extractHeadings() {
     let headList = [];
     for(let i = 1; i <=6; i++) {
@@ -67,7 +70,6 @@ function insertSideBar() {
     sideBar.id = "toc-side-bar";
     sideBar.innerHTML = '<side-bar :tree="tree"></side-bar>';
     let mainDom = document.getElementsByTagName('main')[0];
-    // mainDom.style['padding-right'] = "260px";
     mainDom.appendChild(sideBar);
     let tree = getComponentData();
     new Vue({
