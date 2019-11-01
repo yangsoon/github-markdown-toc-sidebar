@@ -83,8 +83,8 @@
                    this.place="right"
                 }
             },
-            navigation(node){
-                if(node.length > 0) {
+            navigation(node) {
+                if (node.length > 0) {
                     let href = node[0].href.split("#")[1];
                     window.location.href = "#" + href
                 }

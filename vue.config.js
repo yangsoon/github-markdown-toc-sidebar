@@ -42,6 +42,14 @@ if (process.env.NODE_ENV !== 'production') {
   )
 }
 
+// 添加图标
+plugins.push(
+    CopyWebpackPlugin([{
+      from: path.resolve("src/icon/logo.png"),
+      to: path.resolve("dist/img")
+    }])
+);
+
 if (process.env.NODE_ENV === 'production') {
   plugins.push(
     new ZipPlugin({

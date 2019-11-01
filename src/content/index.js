@@ -9,13 +9,15 @@ import {
     Tree,
     Icon,
     Tooltip,
-    ButtonGroup
+    ButtonGroup,
+    Message
 } from "view-design";
 
 Vue.component("Button", Button);
 Vue.component("Drawer", Drawer);
 Vue.component("Tree", Tree);
 Vue.component("Tooltip", Tooltip);
+Vue.component("Icon", Icon);
 Vue.component("Icon", Icon);
 Vue.component("ButtonGroup", ButtonGroup);
 Vue.component('side-bar', SideBar);
@@ -52,7 +54,8 @@ function buildTOCTree(heads) {
             children: [],
             parent: pre,
             tag: tagName,
-            href: heads[i].href
+            href: heads[i].href,
+            offset: heads[i].offsetTop
         });
         pre = pre.children[pre.children.length - 1];
     }
@@ -66,6 +69,10 @@ function getComponentData() {
 }
 
 function insertSideBar() {
+    Message['success']({
+        background: true,
+        content: '生成目录....'
+    });
     let sideBar = document.createElement('div');
     sideBar.id = "toc-side-bar";
     sideBar.innerHTML = '<side-bar :tree="tree"></side-bar>';
